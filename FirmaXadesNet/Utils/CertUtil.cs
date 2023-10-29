@@ -21,13 +21,9 @@
 // 
 // --------------------------------------------------------------------------------------------------------------------
 #pragma warning disable CA1416
-using Org.BouncyCastle.Crypto.Parameters;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FirmaXadesNet.Utils
 {
@@ -84,17 +80,17 @@ namespace FirmaXadesNet.Utils
                     title = "Firmar archivo";
                 }
 
-                X509Certificate2Collection scollection = X509Certificate2UI.SelectFromCollection(fcollection, title, message, X509SelectionFlag.SingleSelection);
+                //X509Certificate2Collection scollection = X509Certificate2UI.SelectFromCollection(fcollection, title, message, X509SelectionFlag.SingleSelection);
 
-                if (scollection != null && scollection.Count == 1)
-                {
-                    cert = scollection[0];
+                //if (scollection != null && scollection.Count == 1)
+                //{
+                //    cert = scollection[0];
 
-                    if (cert.HasPrivateKey == false)
-                    {
-                        throw new Exception("El certificado no tiene asociada una clave privada.");
-                    }
-                }
+                //    if (cert.HasPrivateKey == false)
+                //    {
+                //        throw new Exception("El certificado no tiene asociada una clave privada.");
+                //    }
+                //}
 
                 store.Close();
             }

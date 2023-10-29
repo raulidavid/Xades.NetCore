@@ -381,20 +381,20 @@ namespace FirmaXadesNet.Upgraders
         /// <param name="unsignedProperties"></param>
         private void AddTSACertificates(UnsignedProperties unsignedProperties, IEnumerable<OcspServer> ocspServers, IEnumerable<X509Crl> crlList, FirmaXadesNet.Crypto.DigestMethod digestMethod, bool addCertificateOcspUrl)
         {
-            TimeStampToken token = new TimeStampToken(new CmsSignedData(unsignedProperties.UnsignedSignatureProperties.SignatureTimeStampCollection[0].EncapsulatedTimeStamp.PkiData));
-            IX509Store store = token.GetCertificates("Collection");
+            //TimeStampToken token = new TimeStampToken(new CmsSignedData(unsignedProperties.UnsignedSignatureProperties.SignatureTimeStampCollection[0].EncapsulatedTimeStamp.PkiData));
+            //IX509Stvore store = token.GetCertificates("Collection");
 
-            Org.BouncyCastle.Cms.SignerID signerId = token.SignerID;
+            //Org.BouncyCastle.Cms.SignerID signerId = token.SignerID;
 
-            List<X509Certificate2> tsaCerts = new List<X509Certificate2>();
-            foreach (var tsaCert in store.GetMatches(null))
-            {
-                X509Certificate2 cert = new X509Certificate2(((Org.BouncyCastle.X509.X509Certificate)tsaCert).GetEncoded());
-                tsaCerts.Add(cert);
-            }
+            //List<X509Certificate2> tsaCerts = new List<X509Certificate2>();
+            //foreach (var tsaCert in store.GetMatches(null))
+            //{
+            //    X509Certificate2 cert = new X509Certificate2(((Org.BouncyCastle.X509.X509Certificate)tsaCert).GetEncoded());
+            //    tsaCerts.Add(cert);
+            //}
 
-            X509Certificate2 startCert = DetermineStartCert(tsaCerts.ToArray());
-            AddCertificate(startCert, unsignedProperties, true, ocspServers, crlList, digestMethod, addCertificateOcspUrl, tsaCerts.ToArray());
+            //X509Certificate2 startCert = DetermineStartCert(tsaCerts.ToArray());
+            //AddCertificate(startCert, unsignedProperties, true, ocspServers, crlList, digestMethod, addCertificateOcspUrl, tsaCerts.ToArray());
         }
 
         private void TimeStampCertRefs(SignatureDocument signatureDocument, UpgradeParameters parameters)

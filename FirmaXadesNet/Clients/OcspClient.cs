@@ -252,7 +252,7 @@ namespace FirmaXadesNet.Clients
             _nonceAsn1OctetString = new DerOctetString(new DerOctetString(BigInteger.ValueOf(DateTime.Now.Ticks).ToByteArray()));
 
             values.Add(OcspObjectIdentifiers.PkixOcspNonce, new X509Extension(false, _nonceAsn1OctetString));
-            ocspRequestGenerator.SetRequestExtensions(new X509Extensions(oids, values));
+            ocspRequestGenerator.SetRequestExtensions(new X509Extensions((IList<DerObjectIdentifier>)oids, (IDictionary<DerObjectIdentifier, X509Extension>)values));
 
             if (signCertificate != null)
             {

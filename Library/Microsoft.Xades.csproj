@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ProjectType>Local</ProjectType>
     <AssemblyKeyContainerName />
     <AssemblyOriginatorKeyFile>Microsoft.Xades.snk</AssemblyOriginatorKeyFile>
@@ -93,7 +93,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="System.Security.Cryptography.Xml" Version="5.0.0-rc.2.20475.5" />
+    <PackageReference Include="System.Security.Cryptography.Xml" Version="7.0.1" />
   </ItemGroup>
   <PropertyGroup />
 </Project>
